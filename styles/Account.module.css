@@ -1,0 +1,38 @@
+.account_container {
+  width: 90%;
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  border-bottom: 1px solid white;
+}
+
+.table th {
+  padding-bottom: 1rem;
+  text-decoration: underline;
+}
+
+.table * {
+  padding: 0.5rem;
+}
+
+.order:nth-child(even) {
+  background-color: rgb(55, 55, 55);
+}
+
+.user_controls {
+  margin: 2rem 0 5rem;
+}
+
+.logout {
+  padding: 0.5rem;
+  background: rgb(55, 55, 55);
+  box-shadow: 0 0 3px black;
+}
+
+.logout:hover {
+  background: rgb(30, 30, 30);
+}

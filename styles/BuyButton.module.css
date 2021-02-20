@@ -1,0 +1,16 @@
+.buy {
+  background: rgb(120, 120, 120);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1.75rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  font-weight: 200;
+  margin-left: 0.5rem;
+  width: max-content;
+  cursor: pointer;
+}
+
+.buy:hover {
+  background: rgb(140, 140, 140);
+}

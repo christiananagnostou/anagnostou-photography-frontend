@@ -1,0 +1,95 @@
+.product {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2rem 0 5rem;
+}
+
+.image {
+  height: 100%;
+  max-height: 98vh;
+  max-width: 65%;
+  padding: 35px;
+  background: rgb(240, 240, 240);
+  border: 7px solid rgb(255, 255, 255);
+  box-shadow: 10px 20px 50px rgb(0, 0, 0);
+  box-shadow: 2px 3px 12px rgb(160, 160, 160) inset;
+}
+
+.product_info {
+  max-width: 30%;
+  flex: 1;
+  padding: 1rem 2rem;
+  font-weight: 200;
+  font-family: "Krub", sans-serif;
+}
+
+.image_name {
+  font-family: "Julius Sans One", sans-serif;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.image_description {
+  font-size: 1.3rem;
+  font-style: italic;
+}
+
+.note {
+  font-style: italic;
+  font-size: 0.75rem;
+  font-weight: 100;
+}
+
+.price {
+  width: min-content;
+  letter-spacing: 1px;
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.toggle {
+  background: rgb(59, 59, 59);
+  width: 70%;
+  min-width: 150px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(199, 199, 199);
+  border: none;
+  cursor: pointer;
+}
+
+.toggle:hover {
+  background: rgb(82, 82, 82);
+}
+
+@media (max-width: 1000px) {
+  .product {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image {
+    max-width: 90%;
+  }
+
+  .product_info {
+    text-align: center;
+    max-width: 95%;
+  }
+  .image_description {
+    text-align: center;
+  }
+  .price {
+    margin: 1rem auto;
+  }
+  .toggle {
+    margin: auto;
+    width: 60%;
+  }
+} ;

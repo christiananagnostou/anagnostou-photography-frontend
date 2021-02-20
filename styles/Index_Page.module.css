@@ -1,0 +1,186 @@
+.main {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main_text {
+  position: absolute;
+  left: 10%;
+  top: 15%;
+  z-index: 1;
+  height: fit-content;
+  margin-right: 5rem;
+  text-shadow: 0 0 5px black;
+
+  opacity: 0;
+  animation: fadeIn 0.5s linear 0.5s forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.main_text h1 {
+  font-size: 4vw;
+  font-weight: 300;
+  line-height: 2.3rem;
+}
+
+.main_text h3 {
+  font-weight: 100;
+  font-size: 1.5vw;
+  line-height: 0.2rem;
+  font-family: "Krub", sans-serif;
+}
+
+.image_container {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  animation: scaleDown 1s ease-in-out forwards;
+}
+@keyframes scaleDown {
+  0% {
+    transform: scale(1.75);
+    -webkit-filter: brightness(25%);
+  }
+  100% {
+    transform: scale(1);
+    -webkit-filter: brightness(100%);
+  }
+}
+
+.bouncy_borders {
+  font-family: "Krub", sans-serif;
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0.2rem 0.5rem;
+  font-weight: 100;
+  font-size: 1.2vw;
+  animation: bouncy 5s infinite linear;
+  position: relative;
+  background: rgb(49, 49, 55);
+  width: fit-content;
+  border: none;
+  position: relative;
+}
+.bouncy_borders:hover::before,
+.bouncy_borders:hover::after {
+  width: 100%;
+  height: 100%;
+  border-color: white;
+}
+.bouncy_borders::before,
+.bouncy_borders::after {
+  content: "";
+  display: none;
+  transition: 0.5s;
+}
+.bouncy_borders::before,
+.bouncy_borders::after {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  border: 1px solid transparent;
+  width: 0%;
+  height: 0%;
+  border-left: none;
+  border-top: none;
+  transition: width 150ms, height 150ms 150ms;
+}
+.bouncy_borders::before {
+  top: -1px;
+  right: 0;
+  left: auto;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-right: none;
+}
+
+@keyframes bouncy {
+  0% {
+    top: 0em;
+  }
+  40% {
+    top: 0em;
+  }
+  43% {
+    top: -0.5em;
+  }
+  46% {
+    top: 0em;
+  }
+  48% {
+    top: -0.2em;
+  }
+  50% {
+    top: 0em;
+  }
+  100% {
+    top: 0em;
+  }
+}
+.social_links_container {
+  margin-top: 1rem;
+  width: fit-content;
+}
+
+.social_link {
+  margin: 0 0.4rem;
+  font-size: 1.2vw;
+  color: rgb(200, 200, 200);
+  transition: all 0.2s ease;
+}
+
+.social_link:hover {
+  color: white;
+}
+
+@media (max-width: 1100px) {
+  .main_text h1 {
+    font-size: 3rem;
+  }
+  .main_text h3 {
+    font-size: 1.2rem;
+  }
+  .bouncy_borders {
+    font-size: 1.1rem;
+  }
+  .social_link {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .main_text {
+    top: 2%;
+    left: 5%;
+  }
+  .main_text h1 {
+    font-size: 2.8rem;
+  }
+  .main_text h3 {
+    font-size: 1rem;
+  }
+  .bouncy_borders {
+    font-size: 1rem;
+  }
+  .social_link {
+    font-size: 1rem;
+  }
+}

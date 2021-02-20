@@ -1,0 +1,39 @@
+.form {
+  width: 30%;
+  margin: auto;
+  text-align: center;
+}
+
+.form input {
+  width: 100%;
+  border: none;
+  border-radius: 2px;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  color: rgb(67, 67, 67);
+  font-family: "Krub", sans-serif;
+}
+
+.button {
+  width: 50%;
+  padding: 0.7rem;
+  color: white;
+  background: rgb(120, 158, 173);
+  border: none;
+  cursor: pointer;
+  margin: 1rem 0 5rem;
+}
+.button:hover {
+  background: rgb(143, 176, 189);
+}
+
+@media (max-width: 1000px) {
+  .form {
+    width: 50%;
+  }
+}
+@media (max-width: 768px) {
+  .form {
+    width: 70%;
+  }
+}
