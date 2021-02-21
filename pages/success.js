@@ -39,7 +39,7 @@ const Success = () => {
   const { session_id } = router.query;
 
   const { order, loading } = useOrder(session_id);
-  console.log(order);
+
   return (
     <div className={styles.account_container}>
       <Head>
