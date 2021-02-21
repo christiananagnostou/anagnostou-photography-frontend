@@ -6,7 +6,7 @@
 }
 
 .image {
-  height: auto;
+  display: block;
   max-height: 98vh;
   max-width: 65%;
   padding: 35px;
