@@ -46,7 +46,7 @@ const Success = () => {
         <title>Thank you for your purchase</title>
         <meta name="description" content="Thank you for your purchase" />
       </Head>
-      <h1>Great choice! {order.product.name} is one of my personal favorites</h1>
+      <h1>Great choice!</h1>
       <p>
         I want to personally thank you for supporting me by purchasing one of my photographs. I
         truly hope you enjoy your one-of-a-kind print.
