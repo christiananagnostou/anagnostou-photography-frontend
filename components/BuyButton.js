@@ -18,6 +18,7 @@ const BuyButton = ({ product }) => {
 
   const handleBuy = async (e) => {
     const stripe = await stripePromise;
+    console.log(stripe);
     const token = await getToken();
     console.log("handleBuy token", token);
     e.preventDefault();
