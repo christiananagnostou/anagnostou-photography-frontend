@@ -16,17 +16,20 @@ const BuyButton = ({ product }) => {
     router.push("/login");
   };
 
-  const handleBuy = async () => {
+  const handleBuy = async (e) => {
     const stripe = await stripePromise;
     const token = await getToken();
-
-    const res = await fetch(`${API_URL}/orders`, {
+    e.preventDefault();
+    const res = await fetch(`${API_URL}/orders/`, {
       method: "POST",
       body: JSON.stringify({ product }),
-      headers: { "Content-type": "application/json", Authorization: `Bearer ${token}` },
+      headers: {
+        "Content-type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
     });
-
     const session = await res.json();
+    console.log("session", session);
 
     const result = await stripe.redirectToCheckout({
       sessionId: session.id,
