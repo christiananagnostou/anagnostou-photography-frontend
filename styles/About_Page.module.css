@@ -10,7 +10,7 @@
   width: 100%;
   object-position: center 32%;
   object-fit: cover;
-  animation: scaleDown 1s ease-in-out forwards;
+  animation: scaleDown 0.75s ease-in-out forwards;
 }
 @keyframes scaleDown {
   0% {
