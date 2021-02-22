@@ -7,8 +7,10 @@
 
 .image {
   display: block;
-  max-height: 98vh;
   max-width: 65%;
+  max-height: 98vh;
+  width: auto;
+  height: auto;
   padding: 35px;
   background: rgb(240, 240, 240);
   border: 7px solid rgb(255, 255, 255);
