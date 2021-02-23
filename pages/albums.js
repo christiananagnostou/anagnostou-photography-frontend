@@ -33,7 +33,7 @@ export async function getStaticProps() {
   const album_res = await fetch(`${API_URL}/albums/`);
   const albums = await album_res.json();
 
-  return { props: { albums: albums.reverse() } };
+  return { props: { albums } };
 }
 
 export default albums;

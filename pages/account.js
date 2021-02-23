@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import styles from "../styles/Account.module.css";
 import AuthContext from "../context/AuthContext";
-import { useOrders } from "../hooks/useOrders";
+import { useOrders } from "../hooks";
 import Meta from "../partials/seo-meta";
 
 const account = () => {

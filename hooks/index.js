@@ -1,3 +1,4 @@
 import { useIsInView } from "./useIsInView";
+import { useOrders } from "./useOrders";
 
-export { useIsInView };
+export { useIsInView, useOrders };
