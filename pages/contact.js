@@ -1,9 +1,9 @@
-import Head from "next/head";
 import { useState } from "react";
 import emailjs from "emailjs-com";
 
 import { EMAILJS_SERVICE_KEY, EMAILJS_USER_KEY } from "../utils/urls";
 import styles from "../styles/Contact_Page.module.css";
+import Meta from "../partials/seo-meta";
 
 export default function contact() {
   const initialFormState = {
@@ -55,10 +55,11 @@ export default function contact() {
 
   return (
     <>
-      <Head>
-        <title>Contact - Anagnostou Photography</title>
-        <link rel="icon" href="/favicon.jpg" />
-      </Head>
+      <Meta
+        title="Contact - A Wild Christian"
+        desc="Send Christian an email for inquiries about photography or collaborations."
+        canonical="https://awildchristian.com/contact"
+      />
 
       {sentSuccessful && (
         <p className={styles.success_text}>Message sent. You'll hear from me soon!</p>

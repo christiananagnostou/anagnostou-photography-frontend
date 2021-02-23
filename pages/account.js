@@ -1,11 +1,10 @@
 import { useContext } from "react";
-import Head from "next/head";
 import Link from "next/link";
 
 import styles from "../styles/Account.module.css";
 import AuthContext from "../context/AuthContext";
 import { useOrders } from "../hooks/useOrders";
-import { API_URL } from "../utils/urls";
+import Meta from "../partials/seo-meta";
 
 const account = () => {
   const { user, logoutUser, getToken } = useContext(AuthContext);
@@ -14,22 +13,30 @@ const account = () => {
 
   if (!user) {
     return (
-      <div className={styles.account_container}>
-        <p>Please login or register</p>
-        <Link href="/">
-          <a>Go Back</a>
-        </Link>
-      </div>
+      <>
+        <Meta
+          title="Your Account"
+          desc="Please login or register."
+          canonical="https://awildchristian.com/account"
+        />
+        <div className={styles.account_container}>
+          <p>Please login or register</p>
+          <Link href="/">
+            <a>Go Back</a>
+          </Link>
+        </div>
+      </>
     );
   }
 
   return (
-    <div>
-      <Head>
-        <title>Account Page</title>
-        <link rel="icon" href="/favicon.jpg" />
-        <meta name="description" content="The account page, view your orders and logout" />
-      </Head>
+    <>
+      <Meta
+        title="Your Account"
+        desc="Your account page to review your orders."
+        canonical="https://awildchristian.com/account"
+      />
+
       <main className={styles.account_container}>
         <h1>Your Orders</h1>
 
@@ -64,7 +71,7 @@ const account = () => {
           </a>
         </div>
       </main>
-    </div>
+    </>
   );
 };
 

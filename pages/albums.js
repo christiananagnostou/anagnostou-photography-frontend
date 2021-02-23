@@ -1,16 +1,16 @@
-import Head from "next/head";
-
 import styles from "../styles/Gallery.module.css";
 import { API_URL } from "../utils/urls";
 import { InViewImage } from "../components/InViewImage";
+import Meta from "../partials/seo-meta";
 
 const albums = ({ albums }) => {
   return (
     <>
-      <Head>
-        <title>Albums - Anagnostou Photography</title>
-        <link rel="icon" href="/favicon.jpg" />
-      </Head>
+      <Meta
+        title="Albums - A Wild Christian"
+        desc="All albums on A Wild Christian. View and purchase prints of Christian Anagnostou's favorite photographs."
+        canonical="https://awildchristian.com/albums"
+      />
       <div className={styles.product_container}>
         {albums.map((album) => (
           <div className={styles.album} key={album.name}>

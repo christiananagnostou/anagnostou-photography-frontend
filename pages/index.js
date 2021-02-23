@@ -1,4 +1,3 @@
-import Head from "next/head";
 import Link from "next/link";
 import {
   AiOutlineMail,
@@ -7,16 +6,19 @@ import {
   AiOutlineGithub,
 } from "react-icons/ai";
 
+import Meta from "../partials/seo-meta";
 import styles from "../styles/Index_Page.module.css";
 import { API_URL, fromImageToUrl } from "../utils/urls";
 
 export default function Home({ product }) {
   return (
     <div>
-      <Head>
-        <title>Anagnostou Photography</title>
-        <link rel="icon" href="/favicon.jpg" />
-      </Head>
+      <Meta
+        title="A Wild Christian"
+        desc="Christian Anagnostou photography ecommerce print store. View and purchase prints of Christian Anagnostou's favorite photographs."
+        canonical="https://awildchristian.com/"
+        image={fromImageToUrl(product.image)}
+      />
       <main className={styles.main}>
         <div className={styles.main_text}>
           <h1 className={styles.glow}>Christian Anagnostou</h1>

@@ -1,11 +1,11 @@
 import { useState } from "react";
-import Head from "next/head";
 import { BiDownArrow, BiUpArrow } from "react-icons/bi";
 
 import { fromImageToUrl, API_URL } from "../../utils/urls";
 import { twoDecimals } from "../../utils/format";
 import BuyButton from "../../components/BuyButton";
 import styles from "../../styles/Product.module.css";
+import Meta from "../../partials/seo-meta";
 
 const Product = ({ product }) => {
   const [showInfo, setShowInfo] = useState(false);
@@ -32,11 +32,13 @@ const Product = ({ product }) => {
 
   return (
     <div className={styles.product}>
-      <Head>
-        <link rel="icon" href="/favicon.jpg" />
-        {product.meta_title && <title>{product.meta_title} - Anagnostou Photography</title>}
-        {product.meta_description && <meta name="description" content={product.meta_description} />}
-      </Head>
+      <Meta
+        title={`${product.meta_title} - A Wild Christian`}
+        desc={`${product.meta_description} View and purchase ${product.meta_title}.`}
+        canonical={`https://awildchristian.com/products/${product.slug}`}
+        image={fromImageToUrl(product.image)}
+      />
+
       <img src={fromImageToUrl(product.image)} alt={product.name} className={styles.image} />
       <div className={styles.product_info}>
         <h3 className={styles.image_name}>{product.name}</h3>

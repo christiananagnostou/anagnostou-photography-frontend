@@ -1,16 +1,18 @@
-import Head from "next/head";
 import Image from "next/image";
 import { GiBookmarklet, GiBleedingEye, GiPhotoCamera } from "react-icons/gi";
+import Meta from "../partials/seo-meta";
 
 import styles from "../styles/About_Page.module.css";
 
 const about = () => {
   return (
     <>
-      <Head>
-        <title>About - Anagnostou Photography</title>
-        <link rel="icon" href="/favicon.jpg" />
-      </Head>
+      <Meta
+        title="About - A Wild Christian"
+        desc="Christian Anagnostou's about page to learn about him, his storytelling, his process, and his gadgets."
+        canonical="https://awildchristian.com/about"
+      />
+
       <main>
         <section className={styles.about_img}>
           <Image src="/about_img.jpg" alt="About Me" layout="fill" />

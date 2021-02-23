@@ -1,7 +1,7 @@
-import Head from "next/head";
 import { useContext, useState } from "react";
-import AuthContext from "../context/AuthContext";
 
+import Meta from "../partials/seo-meta";
+import AuthContext from "../context/AuthContext";
 import styles from "../styles/Login.module.css";
 
 const login = () => {
@@ -15,11 +15,11 @@ const login = () => {
 
   return (
     <div>
-      <Head>
-        <title>Login</title>
-        <link rel="icon" href="/favicon.jpg" />
-        <meta name="description" content="Login here to make purchases" />
-      </Head>
+      <Meta
+        title="Login - A Wild Christian"
+        desc="Login to A Wild Christian. View and purchase prints of Christian Anagnostou's favorite photographs."
+        canonical="https://awildchristian.com/login"
+      />
 
       <form onSubmit={handleSubmit} className={styles.form}>
         <h2>Welcome</h2>

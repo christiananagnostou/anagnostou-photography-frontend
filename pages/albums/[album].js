@@ -1,16 +1,17 @@
-import Head from "next/head";
-
 import styles from "../../styles/Gallery.module.css";
 import Gallery from "../../components/Gallery";
 import { API_URL } from "../../utils/urls";
+import Meta from "../../partials/seo-meta";
 
 const Album = ({ album }) => {
   return (
     <>
-      <Head>
-        <title>{album.name} - Anagnostou Photography</title>
-        <link rel="icon" href="/favicon.jpg" />
-      </Head>
+      <Meta
+        title={`${album.name} - A Wild Christian`}
+        desc={`${album.description}`}
+        canonical={`https://awildchristian.com/albums${album.slug}`}
+      />
+
       <div>
         <div className={styles.album_info}>
           <h2>{album.name}</h2>

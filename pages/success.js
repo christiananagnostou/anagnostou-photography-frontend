@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Head from "next/head";
 
 import { API_URL } from "../utils/urls";
 import styles from "../styles/Account.module.css";
+import Meta from "../partials/seo-meta";
 
 const useOrder = (session_id) => {
   const [order, setOrder] = useState(null);
@@ -42,10 +42,12 @@ const Success = () => {
 
   return (
     <div className={styles.account_container}>
-      <Head>
-        <title>Thank you for your purchase</title>
-        <meta name="description" content="Thank you for your purchase" />
-      </Head>
+      <Meta
+        title="Purchase Successful"
+        desc="Thank you for your purchase. View and purchase prints of Christian Anagnostou's favorite photographs."
+        canonical={`https://awildchristian.com/${router.asPath}`}
+      />
+
       <h1>Great choice!</h1>
       <p>
         I want to personally thank you for supporting me by purchasing one of my photographs. I
