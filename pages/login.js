@@ -23,13 +23,14 @@ const login = () => {
 
       <form onSubmit={handleSubmit} className={styles.form}>
         <h2>Welcome</h2>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Email Address"
-          required
-        />
+        <h4>
+          After entering your email, open your inbox to access the one-time-use sign in link. This
+          "magic link" is a secure way to authenticate and identify yourself as a valid user
+        </h4>
+        <div className={styles.form_group}>
+          <label htmlFor="email">Email Address</label>
+          <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+        </div>
         <button type="submit" className={styles.button}>
           Login
         </button>
