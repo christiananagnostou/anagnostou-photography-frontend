@@ -15,7 +15,7 @@ const about = () => {
 
       <main>
         <section className={styles.about_img}>
-          <Image src="/about_img.jpg" alt="About Me" layout="fill" />
+          <Image src="/about_img.jpg" alt="About Christian Anagnostou" layout="fill" />
           <div className={styles.about_text}>
             <p>
               <span>I</span> was born and raised in the Bay Area; the sort of place with smart cars

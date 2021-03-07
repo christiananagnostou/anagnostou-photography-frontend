@@ -4,6 +4,7 @@
   height: 85vh;
   overflow: hidden;
   position: relative;
+  background: rgb(48, 48, 48);
 }
 .about_img img {
   height: 100%;
