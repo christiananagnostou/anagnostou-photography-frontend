@@ -16,7 +16,7 @@ const Product = ({ product }) => {
   const info = () => {
     return (
       <>
-        <p>Total paper size 16”x20” (14.4" x 18" image), unframed.</p>
+        <p>Total paper size 8”x12”, unframed.</p>
         <p>
           Printed on premium lustre photo paper 255 gsm with Epson ultra chrome k3 inks. They are
           archival and will last up to 75 years.
