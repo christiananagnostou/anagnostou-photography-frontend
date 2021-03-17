@@ -8,7 +8,7 @@ import { AuthProvider } from "../context/AuthContext";
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
 
-  const onExcludedPage = router.pathname === "/" || router.pathname === "/test";
+  const onExcludedPage = router.pathname === "/";
 
   return (
     <AuthProvider>
