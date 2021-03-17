@@ -4,7 +4,7 @@ import { AiFillInstagram, AiFillLinkedin, AiOutlineGithub } from "react-icons/ai
 
 const SocialLinks = () => {
   return (
-    <div class={styles.social_links}>
+    <div className={styles.social_links}>
       <a
         href="https://www.instagram.com/christian.anagnostou/"
         target="_blank"
