@@ -58,7 +58,7 @@ const albums = ({ albums, loaded = false }) => {
             >
               {currentAlbumIndex}
             </div>
-            <div className={styles.slider_bar}>
+            <div className={styles.slider_bar} style={{ height: `${albums.length * 30}px` }}>
               <div
                 className={styles.slider_thumb}
                 style={{ top: `${(currentAlbumIndex - 1) * 30}px` }}
@@ -76,7 +76,7 @@ const albums = ({ albums, loaded = false }) => {
               </div>
 
               <div className={styles.album_fan} style={{ transform: `rotate(${3 * 5}deg)` }}>
-                {albumOrder.slice(albumOrder.length - 4).map((album, i) => (
+                {albumOrder.slice(albums.length - 4).map((album, i) => (
                   <Link key={album.slug} href={`/albums/${album.slug}`}>
                     <img
                       src={fromImageToUrl(album.products[0].image)}
@@ -91,8 +91,8 @@ const albums = ({ albums, loaded = false }) => {
               </div>
             </div>
             <div className={styles.album_text}>
-              <h1>{albumOrder[albumOrder.length - 1].name}</h1>
-              <p>{albumOrder[albumOrder.length - 1].description}</p>
+              <h1>{albumOrder[albums.length - 1].name}</h1>
+              <p>{albumOrder[albums.length - 1].description}</p>
             </div>
           </section>
         )}
