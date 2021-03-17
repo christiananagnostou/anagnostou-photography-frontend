@@ -1,0 +1,30 @@
+.social_icons {
+  display: flex;
+  cursor: pointer;
+}
+.social_icons a {
+  margin: 0.5rem;
+}
+.social_icons a svg {
+  width: 20px;
+  height: 20px;
+}
+.social_icons:hover svg path {
+  fill: #465468;
+}
+.social_icons:hover > a:hover svg path {
+  fill: #fff;
+}
+
+.column {
+  flex-direction: column;
+}
+.row {
+  flex-direction: row;
+}
+
+@media screen and (max-width: 768px) {
+  .social_icons {
+    flex-direction: row;
+  }
+}
