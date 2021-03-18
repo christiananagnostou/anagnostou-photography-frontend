@@ -1,4 +1,4 @@
-export const RightArrow = ({ color }) => {
+export const RightArrow = ({ color = "#fff" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -16,7 +16,7 @@ export const RightArrow = ({ color }) => {
   );
 };
 
-export const LeftArrow = ({ color }) => {
+export const LeftArrow = ({ color = "#fff" }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

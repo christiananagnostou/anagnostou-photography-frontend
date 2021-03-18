@@ -41,12 +41,12 @@ export const InViewImage = ({
 
   return (
     <Link href={href}>
-      <a style={imageLoaded ? { display: "block" } : { display: "none" }}>
+      <a style={imageLoaded ? { display: "block" } : { display: "none" }} ref={ref}>
         <img
           src={fromImageToUrl(image)}
           onLoad={() => setImageLoaded(true)}
           className={imageStyles}
-          ref={ref}
+          alt={image}
         />
         {children}
       </a>
