@@ -189,14 +189,6 @@
   .slider_num {
     display: none;
   }
-
-  .slider_bar {
-    height: 180px;
-    width: 5px;
-    background: #465468;
-    position: relative;
-    border-radius: 5px;
-  }
   .slider_thumb {
     border-radius: 5px;
     height: 30px;
