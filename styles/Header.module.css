@@ -34,28 +34,5 @@
 }
 
 @media (max-width: 768px) {
-  .nav {
-    position: absolute;
-    top: -105vh;
-    width: 100%;
-    height: 100vh;
-    flex-direction: column-reverse;
-    opacity: 0;
-    text-align: center;
-  }
 
-  .auth {
-    width: 100%;
-    padding-top: 10vh;
-    margin-bottom: -1px;
-    background: rgb(40, 40, 40);
-  }
-  .auth img {
-    max-width: 50px;
-    border: 2px solid white;
-    margin: 0;
-  }
-  .auth img:hover {
-    background: inherit;
-  }
 }
