@@ -1,16 +1,16 @@
-.product {
+.main_container {
+  height: 85vh;
+  margin-top: 10vh;
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 2rem 0 5rem;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .image {
   display: block;
   max-width: 65%;
-  max-height: 98vh;
+  max-height: 100%;
   width: auto;
-  height: auto;
   padding: 35px;
   background: rgb(240, 240, 240);
   border: 7px solid rgb(255, 255, 255);
@@ -19,60 +19,83 @@
 }
 
 .product_info {
+  min-height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
   max-width: 30%;
   flex: 1;
-  padding: 1rem 2rem;
-  font-weight: 200;
-  font-family: "Krub", sans-serif;
 }
 
-.image_name {
-  font-family: "Julius Sans One", sans-serif;
-  font-size: 2rem;
+.product_info h3 {
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3.5rem;
   letter-spacing: 1px;
+}
+.product_info p {
+  font-size: 1rem;
+  letter-spacing: 1px;
+  line-height: 1.3rem;
+  font-weight: 300;
 }
 
 .image_description {
+  line-height: 1.75rem !important;
   font-size: 1.3rem;
   font-style: italic;
 }
+.price {
+  font-family: "Ubuntu", sans-serif;
+  letter-spacing: 1px;
 
-.note {
-  font-style: italic;
-  font-size: 0.75rem;
+  width: min-content;
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+.order_note {
+  font-size: 0.8rem !important;
   font-weight: 100;
 }
-
-.price {
-  width: min-content;
-  letter-spacing: 1px;
-  font-size: 1.3rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .toggle {
-  background: rgb(59, 59, 59);
-  width: 70%;
-  min-width: 150px;
-  padding: 0.5rem;
+  font-family: "Ubuntu", sans-serif;
+  font-weight: 700;
   font-size: 1rem;
+  background: transparent;
+  width: 130px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 1rem;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: rgb(199, 199, 199);
-  border: none;
-  cursor: pointer;
 }
 
-.toggle:hover {
-  background: rgb(82, 82, 82);
+.product_info section p {
+  padding: 0.5rem 0;
+  line-height: 1.3rem;
+  font-weight: 200;
+}
+
+.circle {
+  position: absolute;
+  top: -21vw;
+  left: 50vw;
+  right: 0;
+  margin: auto;
+  height: 70vw;
+  width: 70vw;
+  border: 40px solid #f9a620;
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.75s ease-in-out;
 }
 
 @media (max-width: 1000px) {
-  .product {
-    flex-direction: column;
+  .main_container {
+    flex-direction: column-reverse;
     align-items: center;
   }
 

@@ -6,6 +6,7 @@ import { twoDecimals } from "../../utils/format";
 import BuyButton from "../../components/BuyButton";
 import styles from "../../styles/Product.module.css";
 import Meta from "../../partials/seo-meta";
+import Circle from "../../components/SVGs/Circle";
 
 const Product = ({ product }) => {
   const [showInfo, setShowInfo] = useState(false);
@@ -22,16 +23,16 @@ const Product = ({ product }) => {
           archival and will last up to 75 years.
         </p>
         <p>All orders will be shipped within 7 business days of the order date.</p>
-        <p className={styles.note}>
-          **Prints will be flat packed within North America. International orders are rolled in a
-          mailing tube**
+        <p className={styles.order_note}>
+          ** Prints will be flat packed within North America. International orders are rolled in a
+          mailing tube **
         </p>
       </>
     );
   };
 
   return (
-    <div className={styles.product}>
+    <>
       <Meta
         title={`${product.meta_title} - A Wild Christian`}
         desc={`${product.meta_description} View and purchase ${product.meta_title}.`}
@@ -39,29 +40,31 @@ const Product = ({ product }) => {
         image={fromImageToUrl(product.image)}
       />
 
-      <img src={fromImageToUrl(product.image)} alt={product.name} className={styles.image} />
-      <div className={styles.product_info}>
-        <h3 className={styles.image_name}>{product.name}</h3>
-        {product.meta_description && (
-          <p className={styles.image_description}>- {product.meta_description}</p>
-        )}
-        {showInfo ? (
-          <>
+      <main className={styles.main_container}>
+        <div className={styles.product_info}>
+          <h3>{product.name}</h3>
+          {product.meta_description && (
+            <p className={styles.image_description}>{product.meta_description}</p>
+          )}
+          <h4 className={styles.price}>${twoDecimals(product.price)}</h4>
+          {showInfo ? (
+            <section>
+              <button className={styles.toggle} onClick={toggleShowInfo}>
+                Order Info <BiUpArrow />
+              </button>
+              {info()}
+            </section>
+          ) : (
             <button className={styles.toggle} onClick={toggleShowInfo}>
-              CLOSE <BiUpArrow />
+              Order Info <BiDownArrow />
             </button>
-            {info()}
-          </>
-        ) : (
-          <button className={styles.toggle} onClick={toggleShowInfo}>
-            ORDER INFO <BiDownArrow />
-          </button>
-        )}
-        <p className={styles.price}>
-          ${twoDecimals(product.price)} <BuyButton product={product} />
-        </p>
-      </div>
-    </div>
+          )}
+          <BuyButton product={product} />
+        </div>
+        <img src={fromImageToUrl(product.image)} alt={product.name} className={styles.image} />
+      </main>
+      <Circle styles={styles.circle} />
+    </>
   );
 };
 

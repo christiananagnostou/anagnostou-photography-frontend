@@ -19,16 +19,24 @@ FONT USAGE:
   outline: 2px solid white;
   -moz-outline-radius: 5px;
 }
-
-html,
-body {
+html {
   position: fixed;
-  overflow: hidden;
   height: 100vh;
   width: 100vw;
+}
+body {
+  height: 100%;
   background: #29313d;
   color: white;
   font-family: "Roboto", sans-serif;
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    height: auto;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
 }
 
 a {
@@ -44,6 +52,8 @@ footer {
   text-align: center;
   font-size: 0.6rem;
   padding-bottom: 0.2rem;
+  position: absolute;
+  bottom: 0;
 }
 
 /* custom scrollbar */
