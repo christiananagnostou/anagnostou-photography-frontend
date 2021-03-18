@@ -67,7 +67,7 @@ const Album = ({ album }) => {
           <div className={styles.image_controller_grid}>
             {album.products.map(({ image, slug, name }) => (
               <InViewImage
-                threshold={0.75}
+                threshold={0.6}
                 image={image}
                 href={`/products/${slug}`}
                 imageStyles={viewState === "single" ? styles.image_single : styles.image_grid}
@@ -77,7 +77,9 @@ const Album = ({ album }) => {
             ))}
           </div>
         </div>
-        <MouseIcon />
+        <div className={styles.mouse_icon}>
+          <MouseIcon />
+        </div>
       </>
     );
   };
