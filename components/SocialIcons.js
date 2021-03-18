@@ -1,8 +1,8 @@
 import styles from "../styles/SocialIcons.module.css";
 
-import GitHubLogo from "../SVGs/GitHubLogo";
-import LinkedInLogo from "../SVGs/LinkedInLogo";
-import InstagramLogo from "../SVGs/InstagramLogo";
+import GitHubLogo from "./SVGs/GitHubLogo";
+import LinkedInLogo from "./SVGs/LinkedInLogo";
+import InstagramLogo from "./SVGs/InstagramLogo";
 
 const SocialIcons = ({ direction = "row" }) => {
   return (
