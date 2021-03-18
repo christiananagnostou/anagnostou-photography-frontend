@@ -72,7 +72,7 @@ const albums = ({ albums, loaded = false }) => {
           <section className={styles.album_container}>
             <div className={styles.album_controller}>
               <div onClick={() => shiftAlbumView("left")}>
-                <LeftArrow color="#fff" />
+                <LeftArrow />
               </div>
 
               <div className={styles.album_fan} style={{ transform: `rotate(${3 * 5}deg)` }}>
@@ -87,7 +87,7 @@ const albums = ({ albums, loaded = false }) => {
               </div>
 
               <div onClick={() => shiftAlbumView("right")}>
-                <RightArrow color="#fff" />
+                <RightArrow />
               </div>
             </div>
             <div className={styles.album_text}>

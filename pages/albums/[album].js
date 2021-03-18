@@ -1,9 +1,87 @@
-import styles from "../../styles/Gallery.module.css";
-import Gallery from "../../components/Gallery";
+import { useState } from "react";
+import Link from "next/link";
+
+import styles from "../../styles/AlbumSingle.module.css";
+import SocialIcons from "../../components/SocialIcons";
+import { LeftArrow, RightArrow } from "../../components/SVGs/Arrows";
+import MouseIcon from "../../components/SVGs/MouseIcon";
 import { API_URL } from "../../utils/urls";
 import Meta from "../../partials/seo-meta";
+import { fromImageToUrl } from "../../utils/urls";
+import ButtonLink from "../../components/ButtonLink";
+import Circle from "../../components/SVGs/Circle";
+import { InViewImage } from "../../components/InViewImage";
 
 const Album = ({ album }) => {
+  const [viewState, setViewState] = useState("single");
+  const [singleImageIndex, setSingleImageIndex] = useState(0);
+
+  const shiftImageView = (direction) => {
+    switch (direction) {
+      case "left":
+        setSingleImageIndex(
+          singleImageIndex === 0 ? album.products.length - 1 : singleImageIndex - 1
+        );
+        break;
+      case "right":
+        console.log(direction, singleImageIndex);
+        setSingleImageIndex(
+          singleImageIndex < album.products.length - 1 ? singleImageIndex + 1 : 0
+        );
+        break;
+    }
+  };
+
+  const singleImageDisplay = () => {
+    const { name, meta_description, slug, image } = album.products[singleImageIndex];
+    return (
+      <div className={styles.display_container}>
+        <div className={styles.image_info}>
+          <h1>{name}</h1>
+          <p>{meta_description}</p>
+          <ButtonLink color="orange" text="BUY NOW" route={`/products/${slug}`} />
+        </div>
+        <div className={styles.image_controller_single}>
+          <div onClick={() => shiftImageView("left")}>
+            <LeftArrow />
+          </div>
+          <Link href={`/products/${slug}`}>
+            <img
+              src={fromImageToUrl(image)}
+              alt={name}
+              className={viewState === "single" ? styles.image_single : styles.image_grid}
+            />
+          </Link>
+          <div onClick={() => shiftImageView("right")}>
+            <RightArrow />
+          </div>
+        </div>
+      </div>
+    );
+  };
+
+  const gridViewDisplay = () => {
+    return (
+      <>
+        <div className={styles.display_container}>
+          <div className={styles.image_controller_grid}>
+            {album.products.map(({ image, slug, name }) => (
+              <InViewImage
+                threshold={0.75}
+                image={image}
+                href={`/products/${slug}`}
+                imageStyles={viewState === "single" ? styles.image_single : styles.image_grid}
+              >
+                <h1>{name}</h1>
+              </InViewImage>
+            ))}
+          </div>
+        </div>
+        <MouseIcon />
+      </>
+    );
+  };
+
   return (
     <>
       <Meta
@@ -11,14 +89,47 @@ const Album = ({ album }) => {
         desc={`${album.description}`}
         canonical={`https://awildchristian.com/albums${album.slug}`}
       />
+      <main className={styles.main_container}>
+        {viewState === "single" ? singleImageDisplay() : gridViewDisplay()}
+        <aside className={styles.aside}>
+          <div className={styles.left_aside}>
+            <div className={styles.view_switch}>
+              <span
+                className={viewState === "single" && styles.highlight_text}
+                onClick={() => setViewState("single")}
+              >
+                SINGLE
+              </span>
+              <span
+                className={viewState === "grid" && styles.highlight_text}
+                onClick={() => setViewState("grid")}
+              >
+                GRID
+              </span>
+            </div>
 
-      <div>
-        <div className={styles.album_info}>
-          <h2>{album.name}</h2>
-          <p>{album.description}</p>
-        </div>
-        <Gallery products={album.products} />
-      </div>
+            <div className={styles.slider}>
+              <div
+                className={styles.slider_num}
+                style={{ left: `${singleImageIndex * 30 + 10}px` }}
+              >
+                {singleImageIndex + 1}
+              </div>
+              <div
+                className={styles.slider_bar}
+                style={{ width: `${album.products.length * 30}px` }}
+              >
+                <div
+                  className={styles.slider_thumb}
+                  style={{ left: `${singleImageIndex * 30}px` }}
+                />
+              </div>
+            </div>
+          </div>
+          <SocialIcons direction="row" />
+        </aside>
+        <Circle styles={viewState === "single" ? styles.circle_single : styles.circle_grid} />
+      </main>
     </>
   );
 };
