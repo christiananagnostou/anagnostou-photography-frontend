@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import AuthContext from "../context/AuthContext";
 import styles from "../styles/Header.module.css";
-import HeaderIcon from "../SVGs/HeaderIcon";
+import HeaderIcon from "./SVGs/HeaderIcon";
 import ButtonLink from "./ButtonLink";
 
 const Header = () => {
