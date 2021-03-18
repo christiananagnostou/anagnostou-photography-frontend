@@ -182,7 +182,7 @@
   .slider {
     justify-content: center;
     max-height: 5px;
-    transform: rotate(-90deg) translateY(-105px);
+    transform: rotate(-90deg) translateY(-1700%);
     transform-origin: center;
   }
   .slider_num {
