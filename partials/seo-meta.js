@@ -15,7 +15,8 @@ const Meta = (props) => (
     <link rel="apple-touch-icon" href="/favicon.jpg" />
 
     <meta name="robots" content="index, follow" />
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta httpEquiv="content-language" content="en-us" />
     <meta name="language" content="English" />
     <meta
       name="keywords"
