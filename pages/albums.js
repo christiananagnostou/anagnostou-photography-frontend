@@ -5,8 +5,8 @@ import styles from "../styles/Albums.module.css";
 import SocialIcons from "../components/SocialIcons";
 import { API_URL, fromImageToUrl } from "../utils/urls";
 import Meta from "../partials/seo-meta";
-import { LeftArrow, RightArrow } from "../SVGs/Arrows";
-import Circle from "../SVGs/Circle";
+import { LeftArrow, RightArrow } from "../components/SVGs/Arrows";
+import Circle from "../components/SVGs/Circle";
 import { useKeyPress } from "../hooks";
 
 const albums = ({ albums, loaded = false }) => {
