@@ -111,10 +111,10 @@
 
 .mouse_icon path:last-child {
   position: relative;
-  animation: oscelate 2s infinite;
-  -webkit-animation: oscelate 2s infinite;
-  -moz-animation: oscelate 2s infinite;
-  -ms-animation: oscelate 2s infinite;
+  animation: oscelate 1.5s infinite;
+  -webkit-animation: oscelate 1.5s infinite;
+  -moz-animation: oscelate 1.5s infinite;
+  -ms-animation: oscelate 1.5s infinite;
 }
 @-webkit-keyframes oscelate {
   0% {
@@ -143,7 +143,7 @@
     transform: translate(-123.781px, -93px);
   }
   50% {
-    transform: translate(-123.781px, -88px);
+    transform: translate(-123.781px, -75px);
   }
   100% {
     transform: translate(-123.781px, -93px);
@@ -163,6 +163,15 @@
 .left_aside {
   display: flex;
   align-items: center;
+
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.back_btn {
+  margin-right: 2rem;
+  font-weight: 100;
 }
 .view_switch {
   font-weight: 200;

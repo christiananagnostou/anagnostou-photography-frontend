@@ -95,6 +95,11 @@ const Album = ({ album }) => {
         {viewState === "single" ? singleImageDisplay() : gridViewDisplay()}
         <aside className={styles.aside}>
           <div className={styles.left_aside}>
+            <div className={styles.back_btn}>
+              <Link href={"/albums"}>
+                <a>BACK</a>
+              </Link>
+            </div>
             <div className={styles.view_switch}>
               <span
                 className={viewState === "single" && styles.highlight_text}
