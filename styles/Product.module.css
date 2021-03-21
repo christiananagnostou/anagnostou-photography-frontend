@@ -15,7 +15,7 @@
   background: rgb(240, 240, 240);
   border: 7px solid rgb(255, 255, 255);
   box-shadow: 10px 20px 50px rgb(0, 0, 0);
-  box-shadow: 2px 3px 12px rgb(160, 160, 160) inset;
+  box-shadow: 2px 3px 12px rgb(160, 160, 160) inset, 0 0 20px rgb(60, 60, 60);
 }
 
 .product_info {
@@ -41,7 +41,7 @@
 }
 
 .image_description {
-  line-height: 1.75rem !important;
+  line-height: 1.75rem;
   font-size: 1.3rem;
   font-style: italic;
 }
@@ -53,11 +53,7 @@
   font-size: 2rem;
   padding: 1rem 0;
 }
-.order_note {
-  font-size: 0.8rem !important;
-  font-weight: 100;
-}
-.toggle {
+.toggle_btn {
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
   font-size: 1rem;
@@ -78,6 +74,10 @@
   line-height: 1.3rem;
   font-weight: 200;
 }
+.order_note {
+  font-size: 0.8rem !important;
+  font-weight: 100;
+}
 
 .circle {
   position: absolute;
@@ -95,26 +95,39 @@
 
 @media (max-width: 1000px) {
   .main_container {
+    margin-top: 10vh;
     flex-direction: column-reverse;
     align-items: center;
+    justify-content: center;
   }
 
   .image {
-    max-width: 90%;
+    max-width: 95%;
+    max-height: 70%;
+    padding: 30px;
   }
 
   .product_info {
-    text-align: center;
+
+    overflow-y: scroll;
+    max-height: 30%;
+    min-height: fit-content;
     max-width: 95%;
   }
+  .product_info h3 {
+    font-size: 2rem;
+    padding-top: 1rem;
+  }
   .image_description {
-    text-align: center;
+    line-height: 1px;
   }
   .price {
-    margin: 1rem auto;
+    margin: 0;
+    width: fit-content;
   }
-  .toggle {
-    margin: auto;
-    width: 60%;
+
+  .product_info section p {
+    padding: 0.2rem 0;
+    line-height: 1.2rem;
   }
 } ;

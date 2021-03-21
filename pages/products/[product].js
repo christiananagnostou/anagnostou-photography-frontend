@@ -16,7 +16,7 @@ const Product = ({ product }) => {
 
   const info = () => {
     return (
-      <>
+      <section>
         <p>Total paper size 8”x12”, unframed.</p>
         <p>
           Printed on premium lustre photo paper 255 gsm with Epson ultra chrome k3 inks. They are
@@ -27,7 +27,7 @@ const Product = ({ product }) => {
           ** Prints will be flat packed within North America. International orders are rolled in a
           mailing tube **
         </p>
-      </>
+      </section>
     );
   };
 
@@ -48,14 +48,14 @@ const Product = ({ product }) => {
           )}
           <h4 className={styles.price}>${twoDecimals(product.price)}</h4>
           {showInfo ? (
-            <section>
-              <button className={styles.toggle} onClick={toggleShowInfo}>
+            <>
+              <button className={styles.toggle_btn} onClick={toggleShowInfo}>
                 Order Info <BiUpArrow />
               </button>
               {info()}
-            </section>
+            </>
           ) : (
-            <button className={styles.toggle} onClick={toggleShowInfo}>
+            <button className={styles.toggle_btn} onClick={toggleShowInfo}>
               Order Info <BiDownArrow />
             </button>
           )}

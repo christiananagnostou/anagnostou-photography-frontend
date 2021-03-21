@@ -19,6 +19,7 @@ FONT USAGE:
   outline: 2px solid white;
   -moz-outline-radius: 5px;
 }
+
 html {
   position: fixed;
   height: 100vh;
@@ -32,11 +33,6 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-  html {
-    height: auto;
-    min-height: 100vh;
-    overflow-x: hidden;
-  }
 }
 
 a {
