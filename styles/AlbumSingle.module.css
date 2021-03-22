@@ -48,6 +48,7 @@
   align-items: center;
 }
 .image_single {
+  width: auto;
   max-width: 80%;
   max-height: 100%;
 
@@ -248,8 +249,7 @@
   }
   .image_info {
     width: 95%;
-    min-width: 300px;
-    min-height: 30%;
+    min-width: unset;
     margin-left: 0%;
 
     display: flex;
@@ -266,8 +266,16 @@
     width: 30px;
   }
   .image_single {
-    border: 5px solid rgb(255, 255, 255);
     max-width: 80%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+
+    border: 5px solid rgb(255, 255, 255);
     margin: 0 0.2rem;
+  }
+  .image_single:hover,
+  .image_grid:hover {
+    transform: none;
   }
 }
