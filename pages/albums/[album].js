@@ -102,13 +102,13 @@ const Album = ({ album }) => {
             </div>
             <div className={styles.view_switch}>
               <span
-                className={viewState === "single" && styles.highlight_text}
+                className={viewState === "single" ? styles.highlight_text : undefined}
                 onClick={() => setViewState("single")}
               >
                 SINGLE
               </span>
               <span
-                className={viewState === "grid" && styles.highlight_text}
+                className={viewState === "grid" ? styles.highlight_text : undefined}
                 onClick={() => setViewState("grid")}
               >
                 GRID
