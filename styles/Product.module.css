@@ -48,7 +48,7 @@
   font-weight: 300;
 }
 
-.image_description {
+.description {
   line-height: 1.75rem;
   font-size: 1.3rem;
   font-style: italic;
@@ -63,7 +63,7 @@
   padding: 1rem 0;
 }
 
-.product_info section p {
+.order_info p {
   padding: 0.5rem 0;
   line-height: 1.3rem;
   font-weight: 200;
@@ -121,24 +121,28 @@
   }
 
   .product_info {
+    padding-top: 2rem;
     flex: 0;
-    overflow-y: scroll;
     height: fit-content;
     width: 95%;
     max-width: unset;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
+
   .product_info h3 {
     font-size: 3rem;
   }
-  .image_description {
-    line-height: 1px;
-  }
+
   .price {
     margin: 0;
     width: fit-content;
   }
 
-  .product_info section p {
+  .order_info p {
     padding: 0.2rem 0;
     line-height: 1.2rem;
   }

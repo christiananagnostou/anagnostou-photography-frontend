@@ -48,16 +48,14 @@
   align-items: center;
 }
 .image_controller_single a {
-  max-width: 80%;
+  width: 80%;
   height: 100%;
-  max-height: 100%;
-  
+
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .image_single {
-  margin: 0 1rem;
   max-width: 100%;
   max-height: 100%;
 
@@ -273,7 +271,6 @@
   }
   .image_single {
     border: 5px solid rgb(255, 255, 255);
-    margin: 0;
   }
   .image_single:hover,
   .image_grid:hover {

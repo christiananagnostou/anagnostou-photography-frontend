@@ -16,7 +16,7 @@ const Product = ({ product }) => {
 
   const info = () => {
     return (
-      <section>
+      <section className={styles.order_info}>
         <p>Total paper size 8”x12”, unframed.</p>
         <p>
           Printed on premium lustre photo paper 255 gsm with Epson ultra chrome k3 inks. They are
@@ -44,7 +44,7 @@ const Product = ({ product }) => {
         <div className={styles.product_info}>
           <h3>{product.name}</h3>
           {product.meta_description && (
-            <p className={styles.image_description}>{product.meta_description}</p>
+            <p className={styles.description}>{product.meta_description}</p>
           )}
           <h4 className={styles.price}>${twoDecimals(product.price)}</h4>
           {showInfo ? (
