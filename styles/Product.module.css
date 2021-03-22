@@ -124,7 +124,8 @@
     flex: 0;
     overflow-y: scroll;
     height: fit-content;
-    max-width: 95%;
+    width: 95%;
+    max-width: unset;
   }
   .product_info h3 {
     font-size: 3rem;
