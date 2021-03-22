@@ -3,6 +3,7 @@
   height: 85vh;
   display: flex;
   position: relative;
+  overflow-x: hidden;
 }
 
 /* ASIDE */

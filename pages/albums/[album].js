@@ -46,11 +46,9 @@ const Album = ({ album }) => {
             <LeftArrow />
           </div>
           <Link href={`/products/${slug}`}>
-            <img
-              src={fromImageToUrl(image)}
-              alt={name}
-              className={viewState === "single" ? styles.image_single : styles.image_grid}
-            />
+            <a>
+              <img src={fromImageToUrl(image)} alt={name} className={styles.image_single} />
+            </a>
           </Link>
           <div onClick={() => shiftImageView("right")}>
             <RightArrow />
@@ -70,7 +68,7 @@ const Album = ({ album }) => {
                 threshold={0.3}
                 image={image}
                 href={`/products/${slug}`}
-                imageStyles={viewState === "single" ? styles.image_single : styles.image_grid}
+                imageStyles={styles.image_grid}
               >
                 <h1>{name}</h1>
               </InViewImage>
