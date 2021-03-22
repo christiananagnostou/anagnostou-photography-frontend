@@ -7,24 +7,32 @@
 }
 
 .image {
-  display: block;
-  max-width: 65%;
-  max-height: 100%;
+  box-sizing: content-box;
+
   width: auto;
-  padding: 35px;
+  max-width: 55%;
+  /* height = 100% - (2 x padding) - (2 x border) */
+  max-height: calc(100% - 60px - 14px);
+
+  padding: 30px;
   background: rgb(240, 240, 240);
+
   border: 7px solid rgb(255, 255, 255);
   box-shadow: 10px 20px 50px rgb(0, 0, 0);
   box-shadow: 2px 3px 12px rgb(160, 160, 160) inset, 0 0 20px rgb(60, 60, 60);
 }
 
 .product_info {
+  max-width: 30%;
+  max-height: 100%;
   min-height: 50%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  max-width: 30%;
   flex: 1;
 }
 
@@ -45,6 +53,7 @@
   font-size: 1.3rem;
   font-style: italic;
 }
+
 .price {
   font-family: "Ubuntu", sans-serif;
   letter-spacing: 1px;
@@ -53,6 +62,17 @@
   font-size: 2rem;
   padding: 1rem 0;
 }
+
+.product_info section p {
+  padding: 0.5rem 0;
+  line-height: 1.3rem;
+  font-weight: 200;
+}
+.order_note {
+  font-size: 0.8rem !important;
+  font-weight: 100;
+}
+
 .toggle_btn {
   font-family: "Ubuntu", sans-serif;
   font-weight: 700;
@@ -69,18 +89,8 @@
   justify-content: space-between;
 }
 
-.product_info section p {
-  padding: 0.5rem 0;
-  line-height: 1.3rem;
-  font-weight: 200;
-}
-.order_note {
-  font-size: 0.8rem !important;
-  font-weight: 100;
-}
-
 .circle {
-  position: absolute;
+  position: fixed;
   top: -21vw;
   left: 50vw;
   right: 0;
@@ -93,30 +103,31 @@
   transition: all 0.75s ease-in-out;
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
   .main_container {
+    height: fit-content;
     margin-top: 10vh;
+    margin-bottom: 5vh;
+
     flex-direction: column-reverse;
     align-items: center;
     justify-content: center;
   }
 
   .image {
-    max-width: 95%;
-    max-height: 70%;
-    padding: 30px;
+    max-width: calc(90% - 60px - 14px);
+    max-height: calc(70% - 60px - 14px);
+    max-height: unset;
   }
 
   .product_info {
-
+    flex: 0;
     overflow-y: scroll;
-    max-height: 30%;
-    min-height: fit-content;
+    height: fit-content;
     max-width: 95%;
   }
   .product_info h3 {
-    font-size: 2rem;
-    padding-top: 1rem;
+    font-size: 3rem;
   }
   .image_description {
     line-height: 1px;

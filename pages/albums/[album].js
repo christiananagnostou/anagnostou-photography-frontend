@@ -67,7 +67,7 @@ const Album = ({ album }) => {
           <div className={styles.image_controller_grid}>
             {album.products.map(({ image, slug, name }) => (
               <InViewImage
-                threshold={0.6}
+                threshold={0.3}
                 image={image}
                 href={`/products/${slug}`}
                 imageStyles={viewState === "single" ? styles.image_single : styles.image_grid}

@@ -32,7 +32,14 @@ body {
   font-family: "Roboto", sans-serif;
 }
 
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
+  html {
+    overflow-x: hidden;
+    position: relative;
+    height: fit-content;
+
+    min-height: 100vh;
+  }
 }
 
 a {
