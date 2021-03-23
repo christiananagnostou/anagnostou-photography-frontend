@@ -69,7 +69,6 @@
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  cursor: pointer;
 }
 .image_single:hover {
   transform: scale(1.01);

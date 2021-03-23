@@ -2,7 +2,7 @@ import Image from "next/image";
 import { GiBookmarklet, GiBleedingEye, GiPhotoCamera } from "react-icons/gi";
 import Meta from "../partials/seo-meta";
 
-import styles from "../styles/About_Page.module.css";
+import styles from "../styles/About.module.css";
 
 const about = () => {
   return (
