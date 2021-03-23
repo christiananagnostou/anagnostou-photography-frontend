@@ -6,6 +6,7 @@ import styles from "../styles/BuyButton.module.css";
 import AuthContext from "../context/AuthContext";
 import { STRIPE_PK, API_URL } from "../utils/urls";
 
+// Create Stripe object
 const stripePromise = loadStripe(STRIPE_PK);
 
 const BuyButton = ({ product }) => {
@@ -32,7 +33,7 @@ const BuyButton = ({ product }) => {
         Authorization: `Bearer ${token}`,
       },
     });
-    
+
     const session = await res.json();
     console.log("session", session);
 
