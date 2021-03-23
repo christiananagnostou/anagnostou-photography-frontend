@@ -22,17 +22,11 @@ const Header = () => {
       <nav className={styles.nav}>
         <ButtonLink text="CONTACT" color="orange" route="/contact" />
 
-        <div className={styles.auth}>
-          {user ? (
-            <Link href="/account">
-              <a>
-                <img src="/user_avatar.png" alt={user.email} />
-              </a>
-            </Link>
-          ) : (
-            <ButtonLink text="LOGIN" color="blue" route="/login" />
-          )}
-        </div>
+        {user ? (
+          <ButtonLink text="ORDERS" color="blue" route="/account" />
+        ) : (
+          <ButtonLink text="LOGIN" color="blue" route="/login" />
+        )}
       </nav>
     </header>
   );

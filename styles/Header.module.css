@@ -24,17 +24,8 @@
   align-items: center;
 }
 
-.auth img {
-  max-width: 30px;
-  border: 1px solid white;
-  border-radius: 50%;
-}
-.auth img:hover {
-  background: rgb(66, 66, 66);
-}
-
 @media (max-width: 768px) {
   .header {
-    padding: 1rem;
+    padding: 0.5rem 1rem;
   }
 }
