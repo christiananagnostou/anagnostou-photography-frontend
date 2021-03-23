@@ -1,0 +1,20 @@
+.button {
+  border: none;
+  padding: 0.7rem 1.3rem;
+  margin-right: 10px;
+  color: white;
+  font-size: 1rem;
+  font-weight: 100;
+}
+.button:hover {
+  box-shadow: 0px 5px 10px #161b20;
+  transform: scale(1.01);
+}
+
+.orange {
+  background: #f9a620;
+  border: 1px solid #2a323d;
+}
+.blue {
+  background: #3a4555;
+}
