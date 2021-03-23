@@ -17,15 +17,13 @@ const Product = ({ product }) => {
   const info = () => {
     return (
       <section className={styles.order_info}>
-        <p>Total paper size 8”x12”, unframed.</p>
+        <p>Total paper size 9”x12”. Includes 1.5” white border.</p>
         <p>
-          Printed on premium lustre photo paper 255 gsm with Epson ultra chrome k3 inks. They are
-          archival and will last up to 75 years.
+          Printed on Epson Premium Lustre photo paper 260gsm. They are archival and will last up to
+          75 years.
         </p>
-        <p>All orders will be shipped within 7 business days of the order date.</p>
         <p className={styles.order_note}>
-          ** Prints will be flat packed within North America. International orders are rolled in a
-          mailing tube **
+          Note: Prints are flat packed and only available within the United States and Canada.
         </p>
       </section>
     );
