@@ -45,6 +45,12 @@
   max-width: 80%;
 }
 
+.social_icons {
+  position: absolute;
+  bottom: 5vh;
+  left: 6.5%;
+}
+
 /* Right Main */
 .right_main {
   height: 100%;
@@ -75,16 +81,24 @@
 @media (max-width: 768px) {
   .main_container {
     height: fit-content;
-    min-height: 90vh;
+    min-height: 80vh;
     flex-direction: column;
   }
+
   .left_main {
     padding: 1rem;
     width: 100%;
   }
+
   .left_main h4 {
     max-width: 100%;
   }
+
+  .social_icons {
+    bottom: 0;
+    left: 4%;
+  }
+
   .right_main {
     display: none;
   }
