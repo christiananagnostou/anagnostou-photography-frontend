@@ -21,7 +21,9 @@ const BuyButton = ({ product }) => {
     console.log(stripe);
     const token = await getToken();
     console.log("handleBuy token", token);
+
     e.preventDefault();
+
     const res = await fetch(`${API_URL}/orders/`, {
       method: "POST",
       body: JSON.stringify({ product }),
@@ -30,6 +32,7 @@ const BuyButton = ({ product }) => {
         Authorization: `Bearer ${token}`,
       },
     });
+    
     const session = await res.json();
     console.log("session", session);
 
