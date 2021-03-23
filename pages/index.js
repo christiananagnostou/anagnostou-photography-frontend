@@ -1,78 +1,35 @@
-import Link from "next/link";
-import {
-  AiOutlineMail,
-  AiOutlineInstagram,
-  AiOutlineLinkedin,
-  AiOutlineGithub,
-} from "react-icons/ai";
+import React from "react";
 
-import Meta from "../partials/seo-meta";
-import styles from "../styles/Index_Page.module.css";
-import { API_URL, fromImageToUrl } from "../utils/urls";
+import styles from "../styles/Index.module.css";
+import Circle from "../components/SVGs/Circle";
+import ButtonLink from "../components/ButtonLink";
+import SocialIcons from "../components/SocialIcons";
 
-export default function Home({ product, imageLoaded = false }) {
+const test = () => {
   return (
-    <div>
-      <Meta
-        title="A Wild Christian"
-        desc="Christian Anagnostou photography ecommerce print store. View and purchase prints of Christian Anagnostou's favorite photographs."
-        canonical="https://awildchristian.com/"
-        image={fromImageToUrl(product.image)}
-      />
-      <main className={styles.main}>
-        {imageLoaded && (
-          <div className={styles.main_text}>
-            <h1 className={styles.glow}>Christian Anagnostou</h1>
-            <h3>Capturing life through a lens</h3>
-            <Link href="/about">
-              <a className={styles.bouncy_borders}>about</a>
-            </Link>
-            <Link href="/albums">
-              <a className={styles.bouncy_borders} style={{ animationDelay: "0.1s" }}>
-                albums
-              </a>
-            </Link>
-            <div className={styles.social_links_container}>
-              <Link href="/contact">
-                <a className={styles.social_link}>
-                  <AiOutlineMail />
-                </a>
-              </Link>
-              <a
-                href="https://www.instagram.com/christian.anagnostou/"
-                target="_blank"
-                className={styles.social_link}
-              >
-                <AiOutlineInstagram />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ChristianAnagnostou/"
-                target="_blank"
-                className={styles.social_link}
-              >
-                <AiOutlineLinkedin />
-              </a>
-              <a
-                href="https://github.com/ChristianAnagnostou"
-                target="_blank"
-                className={styles.social_link}
-              >
-                <AiOutlineGithub />
-              </a>
-            </div>
+    <>
+      <main className={styles.main_container}>
+        <div className={styles.left_main}>
+          <h1>
+            Hi<span>.</span> I'm Christian
+          </h1>
+          <h4>
+            I'm A Web Developer and Photographer obsessed with capturing and creating digital
+            experiences that inspire others.
+          </h4>
+          <div>
+            <ButtonLink text="ABOUT ME" color="blue" route="/about" />
+            <ButtonLink text="MY ALBUMS" color="orange" route="/albums" />
           </div>
-        )}
-        <div className={styles.image_container}>
-          <img className={styles.image} src={fromImageToUrl(product.image)} alt={product.name} />
+          <SocialIcons direction="row" />
+        </div>
+        <div className={styles.right_main}>
+          <img src={"profile_img.png"} alt="Christian Anagnostou" />
         </div>
       </main>
-    </div>
+      <Circle styles={styles.circle} />
+    </>
   );
-}
+};
 
-export async function getStaticProps() {
-  const product_res = await fetch(`${API_URL}/products/?name=De-Escalator`);
-  const product = await product_res.json();
-
-  return { props: { product: product[0], imageLoaded: true } };
-}
+export default test;

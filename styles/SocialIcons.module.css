@@ -1,6 +1,7 @@
 .social_icons {
   display: flex;
   cursor: pointer;
+  width: fit-content;
 }
 .social_icons a {
   margin: 0.5rem;
