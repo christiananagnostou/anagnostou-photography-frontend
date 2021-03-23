@@ -21,7 +21,7 @@ const ButtonLink = ({ text, color, route }) => {
   };
 
   return (
-    <Link href={route}>
+    <Link href={route ? route : "#"}>
       <a style={{ ...buttonStyles, background: getColorHex(color) }}>{text}</a>
     </Link>
   );
