@@ -24,7 +24,6 @@ const Album = ({ album }) => {
         );
         break;
       case "right":
-        console.log(direction, singleImageIndex);
         setSingleImageIndex(
           singleImageIndex < album.products.length - 1 ? singleImageIndex + 1 : 0
         );
