@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { BiDownArrow, BiUpArrow } from "react-icons/bi";
 
 import { fromImageToUrl, API_URL } from "../../utils/urls";
 import { twoDecimals } from "../../utils/format";
@@ -7,6 +6,7 @@ import BuyButton from "../../components/BuyButton";
 import styles from "../../styles/Product.module.css";
 import Meta from "../../partials/seo-meta";
 import Circle from "../../components/SVGs/Circle";
+import { SmallArrowDown, SmallArrowUp } from "../../components/SVGs/Arrows";
 
 const Product = ({ product }) => {
   const [showInfo, setShowInfo] = useState(false);
@@ -48,13 +48,13 @@ const Product = ({ product }) => {
           {showInfo ? (
             <>
               <button className={styles.toggle_btn} onClick={toggleShowInfo}>
-                Order Info <BiUpArrow />
+                Order Info <SmallArrowUp />
               </button>
               {info()}
             </>
           ) : (
             <button className={styles.toggle_btn} onClick={toggleShowInfo}>
-              Order Info <BiDownArrow />
+              Order Info <SmallArrowDown />
             </button>
           )}
           <BuyButton product={product} />
