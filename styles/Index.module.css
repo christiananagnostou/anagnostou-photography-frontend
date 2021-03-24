@@ -51,7 +51,9 @@
   left: 6.5%;
 }
 /* ABOUT PAGE */
-
+.about_h4 {
+  margin: 0.3rem 0;
+}
 .arrows {
   display: flex;
   width: 80%;

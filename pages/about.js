@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-// import { GiBookmarklet, GiBleedingEye, GiPhotoCamera } from "react-icons/gi";
 import styles from "../styles/Index.module.css";
 import Meta from "../partials/seo-meta";
 import ButtonLink from "../components/ButtonLink";
@@ -85,8 +84,10 @@ const about = () => {
       <main className={styles.main_container}>
         <div className={styles.left_main}>
           <h1>{textSections[textSectionIndex].title}</h1>
-          {textSections[textSectionIndex].paragraphs.map((text) => (
-            <h4>{text}</h4>
+          {textSections[textSectionIndex].paragraphs.map((text, i) => (
+            <h4 key={i} className={styles.about_h4}>
+              {text}
+            </h4>
           ))}
 
           <div className={styles.arrows}>
