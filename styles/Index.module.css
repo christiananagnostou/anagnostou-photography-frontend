@@ -50,6 +50,23 @@
   bottom: 5vh;
   left: 6.5%;
 }
+/* ABOUT PAGE */
+
+.arrows {
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+}
+.arrows div {
+  padding: 0;
+  margin: 0;
+  height: min-content;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.arrows svg:hover path {
+  fill: #f9a71e;
+}
 
 /* Right Main */
 .right_main {
