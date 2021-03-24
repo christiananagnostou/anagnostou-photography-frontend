@@ -1,0 +1,67 @@
+.orders_container {
+  width: 90%;
+  max-width: 800px;
+  margin: 10vh auto 0;
+  text-align: center;
+}
+
+.table {
+  width: 100%;
+  border-bottom: 1px solid white;
+}
+
+.table th {
+  padding-bottom: 1rem;
+  text-decoration: underline;
+}
+
+.table * {
+  padding: 0.5rem;
+}
+
+.order:nth-child(even) {
+  background-color: #20262e;
+}
+
+.product_link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.user_controls {
+  margin-top: 2rem;
+}
+
+.button {
+  margin-top: 2rem;
+}
+
+.circle {
+  position: fixed;
+  top: 60vh;
+  left: -30vw;
+  right: 0;
+  margin: auto;
+  height: 160vw;
+  width: 160vw;
+  border: 40px solid #f9a620;
+  border-radius: 50%;
+  z-index: -1;
+  transition: all 0.75s ease-in-out;
+}
+
+/* SUCCESS PAGE */
+.success_container {
+  width: 90%;
+  max-width: 800px;
+  margin: 10vh auto 0;
+  text-align: center;
+}
+.success_container h1 {
+  font-weight: 700;
+  font-size: 3rem;
+}
+.success_container h4 {
+  font-weight: 300;
+  line-height: 1.5rem;
+}

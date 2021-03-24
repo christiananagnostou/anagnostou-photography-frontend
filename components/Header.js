@@ -23,7 +23,7 @@ const Header = () => {
         <ButtonLink text="CONTACT" color="orange" route="/contact" />
 
         {user ? (
-          <ButtonLink text="ORDERS" color="blue" route="/account" />
+          <ButtonLink text="ORDERS" color="blue" route="/orders" />
         ) : (
           <ButtonLink text="LOGIN" color="blue" route="/login" />
         )}

@@ -1,12 +1,14 @@
 import { useContext } from "react";
 import Link from "next/link";
 
-import styles from "../styles/Account.module.css";
+import styles from "../styles/Orders.module.css";
 import AuthContext from "../context/AuthContext";
 import { useOrders } from "../hooks";
 import Meta from "../partials/seo-meta";
+import ButtonLink from "../components/ButtonLink";
+import Circle from "../components/SVGs/Circle";
 
-const account = () => {
+const orders = () => {
   const { user, logoutUser, getToken } = useContext(AuthContext);
 
   const { orders, loading } = useOrders(user, getToken);
@@ -15,16 +17,19 @@ const account = () => {
     return (
       <>
         <Meta
-          title="Your Account"
-          desc="Please login or register."
-          canonical="https://awildchristian.com/account"
+          title="Your Orders - A Wild Christian"
+          desc="Your account page to review your orders."
+          canonical="https://awildchristian.com/orders"
         />
-        <div className={styles.account_container}>
-          <p>Please login or register</p>
-          <Link href="/">
-            <a>Go Back</a>
-          </Link>
+
+        <div className={styles.orders_container}>
+          <h1>Please login to view your orders</h1>
+          <div className={styles.button}>
+            <ButtonLink route="/" color="orange" text="GO BACK" />
+          </div>
         </div>
+
+        <Circle styles={styles.circle} />
       </>
     );
   }
@@ -32,12 +37,12 @@ const account = () => {
   return (
     <>
       <Meta
-        title="Your Account"
+        title="Your Orders - A Wild Christian"
         desc="Your account page to review your orders."
-        canonical="https://awildchristian.com/account"
+        canonical="https://awildchristian.com/orders"
       />
 
-      <main className={styles.account_container}>
+      <main className={styles.orders_container}>
         <h1>Your Orders</h1>
 
         <table className={styles.table}>
@@ -53,11 +58,11 @@ const account = () => {
           {orders.map((order) => (
             <tr className={styles.order} key={order.id}>
               <td>{new Date(order.created_at).toLocaleDateString("en-US")}</td>
-              <td>
-                <Link href={`/products/${order.product.slug}`}>
+              <Link href={`/products/${order.product.slug}`}>
+                <td class={styles.product_link}>
                   <a>{order.product.name}</a>
-                </Link>
-              </td>
+                </td>
+              </Link>
               <td>${order.total}</td>
               <td>{order.status}</td>
             </tr>
@@ -66,13 +71,15 @@ const account = () => {
 
         <div className={styles.user_controls}>
           <p>Logged in as: {user.email}</p>
-          <a href="#" onClick={logoutUser} className={styles.logout}>
-            Logout
-          </a>
+          <div onClick={logoutUser} className={styles.button}>
+            <ButtonLink text="LOGOUT" color="blue" route="#" />
+          </div>
         </div>
       </main>
+
+      <Circle styles={styles.circle} />
     </>
   );
 };
 
-export default account;
+export default orders;
