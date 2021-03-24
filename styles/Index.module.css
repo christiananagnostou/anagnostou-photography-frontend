@@ -110,6 +110,9 @@
   .left_main h4 {
     max-width: 100%;
   }
+  .arrows {
+    width: 100%;
+  }
 
   .social_icons {
     bottom: 0;
