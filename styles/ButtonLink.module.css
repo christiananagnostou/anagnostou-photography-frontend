@@ -8,7 +8,6 @@
 }
 .button:hover {
   box-shadow: 0px 5px 10px #161b20;
-  transform: scale(1.01);
 }
 
 .orange {
