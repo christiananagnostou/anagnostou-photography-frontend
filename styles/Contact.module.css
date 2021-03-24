@@ -1,5 +1,5 @@
 .form {
-  max-width: 30%;
+  max-width: 40%;
   margin: 10vh auto 0;
 
   display: flex;
@@ -7,12 +7,13 @@
   justify-content: center;
   align-items: center;
 }
+
 .welcome_text {
   text-align: center;
 }
 .welcome_text h1 {
   font-weight: 700;
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 .welcome_text h4 {
   font-weight: 300;
@@ -22,12 +23,22 @@
 .form_group {
   display: flex;
   flex-direction: column;
-  text-align: left;
   width: 100%;
 }
 
 .form_group label {
   margin: 1rem 0 0.2rem;
+}
+
+.form_group textarea {
+  border-radius: 2px;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  color: rgb(67, 67, 67);
+  font-family: inherit;
+
+  resize: none;
+  overflow: auto;
 }
 
 .form_group input {
@@ -36,13 +47,14 @@
   padding: 0.5rem;
   font-size: 1.2rem;
   color: rgb(67, 67, 67);
-  font-family: "Krub", sans-serif;
+  font-family: inherit;
 }
 
 .button {
+  width: fit-content;
   border: none;
   padding: 0.7rem 1.3rem;
-  margin: 1rem 0;
+  margin: 1rem auto;
   color: white;
   font-size: 1rem;
   font-weight: 100;
@@ -51,6 +63,21 @@
 }
 .button:hover {
   box-shadow: 0px 5px 10px #161b20;
+}
+
+.success_text {
+  max-width: 400px;
+  text-align: center;
+  margin: 0.5rem auto;
+}
+
+.social_icons {
+  width: fit-content;
+  position: absolute;
+  bottom: 3vh;
+  left: 0;
+  right: 0;
+  margin: auto;
 }
 
 .circle {
@@ -75,8 +102,5 @@
 @media (max-width: 768px) {
   .form {
     max-width: 95%;
-  }
-  .form_group {
-    width: 80%;
   }
 }

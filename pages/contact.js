@@ -2,8 +2,10 @@ import { useState } from "react";
 import emailjs from "emailjs-com";
 
 import { EMAILJS_SERVICE_KEY, EMAILJS_USER_KEY } from "../utils/urls";
-import styles from "../styles/Contact_Page.module.css";
+import styles from "../styles/Contact.module.css";
 import Meta from "../partials/seo-meta";
+import SocialIcons from "../components/SocialIcons";
+import Circle from "../components/SVGs/Circle";
 
 export default function contact() {
   const initialFormState = {
@@ -57,14 +59,15 @@ export default function contact() {
     <>
       <Meta
         title="Contact - A Wild Christian"
-        desc="Send Christian an email for inquiries about photography or collaborations."
+        desc="Have a question? Send Christian an email for inquiries about print specials or collaborations."
         canonical="https://awildchristian.com/contact"
       />
 
-      {sentSuccessful && (
-        <p className={styles.success_text}>Message sent. You'll hear from me soon!</p>
-      )}
-      <form id="contact-form" onSubmit={handleSubmit} method="POST" className={styles.form}>
+      <form className={styles.form} onSubmit={handleSubmit} method="POST">
+        <div className={styles.welcome_text}>
+          <h1>Let's chat!</h1>
+          <h4>I like to create things with fun, open-minded people. Feel free to say hello!</h4>
+        </div>
         <div className={styles.form_group}>
           <label htmlFor="name">YOUR NAME</label>
           <input type="text" value={formData.name} onChange={onNameChange} required />
@@ -88,20 +91,23 @@ export default function contact() {
 
         <div className={styles.form_group}>
           <label htmlFor="message">MESSAGE</label>
-          <textarea
-            rows="6"
-            cols="50"
-            value={formData.message}
-            onChange={onMessageChange}
-          ></textarea>
+          <textarea rows="4" value={formData.message} onChange={onMessageChange}></textarea>
         </div>
 
         <div className={styles.form_group}>
-          <button type="submit" className={styles.form_btn}>
+          <button type="submit" className={styles.button}>
             SEND
           </button>
         </div>
       </form>
+
+      {sentSuccessful && <p className={styles.success_text}>MESSAGE SENT SUCCESSFULLY!</p>}
+
+      <div className={styles.social_icons}>
+        <SocialIcons />
+      </div>
+
+      <Circle styles={styles.circle} />
     </>
   );
 }
