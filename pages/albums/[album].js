@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 import styles from "../../styles/AlbumSingle.module.css";
@@ -11,6 +11,7 @@ import { fromImageToUrl } from "../../utils/urls";
 import ButtonLink from "../../components/ButtonLink";
 import Circle from "../../components/SVGs/Circle";
 import { InViewImage } from "../../components/InViewImage";
+import { useKeyPress } from "../../hooks";
 
 const Album = ({ album }) => {
   const [viewState, setViewState] = useState("single");
@@ -19,17 +20,35 @@ const Album = ({ album }) => {
   const shiftImageView = (direction) => {
     switch (direction) {
       case "left":
-        setSingleImageIndex(
-          singleImageIndex === 0 ? album.products.length - 1 : singleImageIndex - 1
+        setSingleImageIndex((prevIndex) =>
+          prevIndex === 0 ? album.products.length - 1 : prevIndex - 1
         );
         break;
       case "right":
-        setSingleImageIndex(
-          singleImageIndex < album.products.length - 1 ? singleImageIndex + 1 : 0
+        setSingleImageIndex((prevIndex) =>
+          prevIndex < album.products.length - 1 ? prevIndex + 1 : 0
         );
         break;
     }
   };
+
+  // Rotate right every 5 seconds
+  useEffect(() => {
+    let timeout;
+    if (viewState === "single") {
+      timeout = setTimeout(() => shiftImageView("right"), 5000);
+    }
+    return () => clearTimeout(timeout);
+  }, [singleImageIndex]);
+
+  // Use arrows to navigate albums
+  const rightKeyPress = useKeyPress("ArrowRight");
+  const leftKeyPress = useKeyPress("ArrowLeft");
+
+  useEffect(() => {
+    rightKeyPress && shiftImageView("right");
+    leftKeyPress && shiftImageView("left");
+  }, [rightKeyPress, leftKeyPress]);
 
   const singleImageDisplay = () => {
     const { name, meta_description, slug, image } = album.products[singleImageIndex];
