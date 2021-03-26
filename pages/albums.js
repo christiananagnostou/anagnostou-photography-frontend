@@ -41,9 +41,10 @@ const albums = ({ albums }) => {
     }
   };
 
+  // Rotate albumOrder right every 6 seconds
   useEffect(() => {
     const timeout = setTimeout(() => shiftAlbumView("right"), 6000);
-    return () => clearInterval(timeout);
+    return () => clearTimeout(timeout);
   }, [currentAlbumIndex]);
 
   // Use arrows to navigate albums
