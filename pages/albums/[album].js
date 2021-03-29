@@ -83,6 +83,7 @@ const Album = ({ album }) => {
           <div className={styles.image_controller_grid}>
             {album.products.map(({ image, slug, name }) => (
               <InViewImage
+                key={name}
                 threshold={0.3}
                 image={image}
                 href={`/products/${slug}`}
