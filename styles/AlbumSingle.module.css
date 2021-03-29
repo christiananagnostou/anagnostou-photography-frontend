@@ -57,8 +57,6 @@
   align-items: center;
 }
 .image_single {
-  height: auto;
-  width: auto;
   max-width: 100%;
   max-height: 100%;
 
