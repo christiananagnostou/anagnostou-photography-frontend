@@ -73,6 +73,7 @@ const Album = ({ album }) => {
                 width={2}
                 height={3}
                 layout="responsive"
+                onLoad={() => console.log('image loaded')}
               />
             </a>
           </Link>

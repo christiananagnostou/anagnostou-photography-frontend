@@ -39,6 +39,7 @@ const index = ({ homeImg }) => {
             width={2}
             height={3}
             layout="responsive"
+            onLoad={() => console.log("home image loaded")}
           />
         </div>
       </main>
