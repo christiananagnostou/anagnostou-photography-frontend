@@ -86,11 +86,11 @@
   overflow: visible !important;
   position: absolute;
   /* name, duration, timing function, delay, fill mode */
-  -webkit-animation: fadeIn 700ms ease-in-out 1s both;
-  animation: fadeIn 700ms ease-in-out 1s both;
+  -webkit-animation: fadeIn 700ms ease-in-out 2s both;
+  animation: fadeIn 700ms ease-in-out 2s both;
 }
 
-.right_main img {
+.right_main div img {
   position: relative !important;
   height: 85.5vh !important;
   width: 57vh !important;
