@@ -72,15 +72,29 @@
 
 /* Right Main */
 .right_main {
-  height: 100%;
+  overflow: visible;
+  height: 95%;
   width: 40%;
-  min-width: 40%;
+  min-width: 57vh;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.right_main div {
+  overflow: visible !important;
+  position: absolute;
+  /* name, duration, timing function, delay, fill mode */
+  -webkit-animation: fadeIn 700ms ease-in-out 1s both;
+  animation: fadeIn 700ms ease-in-out 1s both;
 }
 
 .right_main img {
-  max-height: 120%;
-  max-width: 100%;
+  position: relative !important;
+  height: 85.5vh !important;
+  width: 57vh !important;
+  box-shadow: 0 0 100px black;
 }
 
 .circle {
@@ -95,6 +109,29 @@
   border-radius: 50%;
   z-index: 0;
   transition: all 0.75s ease-in-out;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    top: 50px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    top: 50px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 @media (max-width: 768px) {
