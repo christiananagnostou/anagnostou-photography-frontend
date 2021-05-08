@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 import styles from "../../styles/AlbumSingle.module.css";
 import SocialIcons from "../../components/SocialIcons";
@@ -65,7 +66,14 @@ const Album = ({ album }) => {
           </div>
           <Link href={`/products/${slug}`}>
             <a>
-              <img src={fromImageToUrl(image)} alt={name} className={styles.image_single} />
+              <Image
+                src={fromImageToUrl(image)}
+                alt={name}
+                className={styles.image_single}
+                width={2}
+                height={3}
+                layout="responsive"
+              />
             </a>
           </Link>
           <div onClick={() => shiftImageView("right")}>
@@ -110,6 +118,7 @@ const Album = ({ album }) => {
       />
       <main className={styles.main_container}>
         {viewState === "single" ? singleImageDisplay() : gridViewDisplay()}
+
         <aside className={styles.aside}>
           <div className={styles.left_aside}>
             <div className={styles.back_btn}>
