@@ -49,8 +49,9 @@
 }
 .image_controller_single a {
   width: fit-content;
-  max-width: 80%;
+  width: 80%;
   height: 100%;
+  border: 1px solid red;
 
   display: flex;
   justify-content: center;
@@ -58,6 +59,7 @@
 }
 .image_single {
   max-width: 100%;
+  width: auto;
   max-height: 100%;
 
   border: 7px solid rgb(255, 255, 255);
