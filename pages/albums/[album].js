@@ -65,9 +65,7 @@ const Album = ({ album }) => {
           </div>
           <Link href={`/products/${slug}`}>
             <a>
-              <div>
-                <img src={fromImageToUrl(image)} alt={name} className={styles.image_single} />
-              </div>
+              <img src={fromImageToUrl(image)} alt={name} className={styles.image_single} />
             </a>
           </Link>
           <div onClick={() => shiftImageView("right")}>
