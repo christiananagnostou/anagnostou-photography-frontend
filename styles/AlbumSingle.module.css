@@ -57,7 +57,6 @@
   align-items: center;
 }
 .image_single {
-  width: auto;
   max-height: 100%;
 
   border: 7px solid rgb(255, 255, 255);
