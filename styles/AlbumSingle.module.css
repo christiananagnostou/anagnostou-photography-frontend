@@ -54,9 +54,18 @@
 
   display: flex;
   justify-content: center;
+}
+.image_controller_single a div {
+  height: 100%;
+  width: fit-content;
+  border: 1px solid red;
+
+  display: flex;
+  justify-content: center;
   align-items: center;
 }
 .image_single {
+  width: auto;
   max-height: 100%;
 
   border: 7px solid rgb(255, 255, 255);
