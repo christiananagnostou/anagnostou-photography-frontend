@@ -51,14 +51,12 @@
   width: fit-content;
   width: 80%;
   height: 100%;
-  border: 1px solid red;
 
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .image_single {
-  max-width: 100%;
   width: auto;
   max-height: 100%;
 
