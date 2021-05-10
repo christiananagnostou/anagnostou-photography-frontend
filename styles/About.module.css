@@ -21,11 +21,10 @@
 
 /* Left Main */
 .left_main {
-  flex: 1;
-  max-width: 50%;
-  height: fit-content;
+  height: 75%;
+  max-width: 60%;
+  padding: 0 2rem;
 
-  line-height: 5rem;
   font-family: "Roboto", sans-serif;
   position: relative;
 
@@ -40,7 +39,8 @@
 .left_main h4 {
   font-weight: 300;
   line-height: 1.6rem;
-  max-width: 80%;
+  margin: 0.3rem 0;
+  max-width: 90%;
 }
 
 .social_icons {
@@ -50,10 +50,13 @@
 }
 
 .arrows {
-  display: flex;
+  justify-self: flex-end;
+  margin-top: 1.5rem;
   width: 80%;
+  display: flex;
   justify-content: space-evenly;
 }
+
 .arrows div {
   padding: 0;
   margin: 0;
@@ -104,16 +107,23 @@
   }
 
   .left_main {
-    padding: 1rem;
+    padding: 0rem;
     width: 100%;
     max-width: 100%;
+    align-items: center;
   }
-
+  .left_main h1 {
+    font-size: 3rem;
+  }
   .left_main h4 {
     max-width: 100%;
   }
   .arrows {
     width: 100%;
+  }
+
+  .arrows * {
+    margin: 0 !important;
   }
 
   .social_icons {
