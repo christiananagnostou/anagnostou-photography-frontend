@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import styles from "../styles/Index.module.css";
+import styles from "../styles/About.module.css";
 import Meta from "../partials/seo-meta";
 import ButtonLink from "../components/ButtonLink";
 import SocialIcons from "../components/SocialIcons";
@@ -105,8 +105,9 @@ const about = () => {
         <div className={styles.social_icons}>
           <SocialIcons direction="row" />
         </div>
+
         <div className={styles.right_main}>
-          <img src={"profile_img.png"} alt="Christian Anagnostou" />
+          <img src={"about_img.jpg"} alt="Christian Anagnostou" className={styles.about_img} />
         </div>
       </main>
       <Circle styles={styles.circle} />

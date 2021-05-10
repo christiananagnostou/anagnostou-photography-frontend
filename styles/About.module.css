@@ -1,144 +1,127 @@
-.about_img {
+.main_container {
+  margin-top: 10vh;
+  height: 90vh;
   width: 100%;
-  margin: auto;
-  height: 85vh;
-  overflow: hidden;
+  padding: 1rem;
+
   position: relative;
-  background: rgb(48, 48, 48);
-}
-.about_img img {
-  height: 100%;
-  width: 100%;
-  object-position: center 32%;
-  object-fit: cover;
-  animation: scaleDown 0.75s ease-in-out forwards;
-}
-@keyframes scaleDown {
-  0% {
-    transform: scale(1.25);
-    -webkit-filter: brightness(25%);
-  }
-  100% {
-    transform: scale(1);
-    -webkit-filter: brightness(100%);
-  }
-}
-
-.about_text {
-  font-family: "Krub", sans-serif;
-  font-size: 1.5rem;
-  font-weight: 200;
-
-  position: absolute;
   z-index: 1;
-  top: 0;
-  right: 0%;
-  width: 50%;
-  height: 100%;
-  color: black;
-  padding: 5rem 1rem 5rem 15%;
-  background: linear-gradient(to right, transparent 0%, rgba(255, 255, 255, 0.8) 30%);
-  line-height: 2.2rem;
-}
-.about_text span {
-  font-size: 3rem;
-  font-weight: 400;
-  line-height: 1rem;
-}
 
-.cols_container {
   display: flex;
-  flex-wrap: wrap;
-  width: 90%;
-  margin: auto;
-}
-.col {
-  width: 30%;
-  flex: 1;
-}
-.col + .col {
-  border-left: 1px solid rgb(20, 20, 20);
-}
-
-.col_title {
-  display: flex;
+  justify-content: space-evenly;
   align-items: center;
+}
+
+.main_container button {
+  border: none;
+  color: white;
+  padding: 0.7rem 1.3rem;
+  font-size: 0.8rem;
+}
+
+/* Left Main */
+.left_main {
+  flex: 1;
+  max-width: 50%;
+  height: fit-content;
+
+  line-height: 5rem;
+  font-family: "Roboto", sans-serif;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  font-size: 1.7rem;
 }
-.col_title h3 {
-  font-size: 1.3rem;
-  margin-left: 1rem;
+.left_main h1 {
+  font-weight: 700;
+  font-size: 4rem;
 }
-.col_body {
-  padding: 0 3rem;
-  font-family: "Krub", sans-serif;
-  line-height: 2rem;
-  font-weight: 100;
-}
-.col_body {
-  text-indent: 1rem;
+.left_main h4 {
+  font-weight: 300;
+  line-height: 1.6rem;
+  max-width: 80%;
 }
 
-.line {
-  width: 50%;
-  border-bottom: 1px solid rgb(20, 20, 20);
+.social_icons {
+  position: absolute;
+  bottom: 5vh;
+  left: 6.5%;
+}
+
+.arrows {
+  display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+}
+.arrows div {
+  padding: 0;
+  margin: 0;
+  height: min-content;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+.arrows svg:hover path {
+  fill: #f9a71e;
+}
+
+/* Right Main */
+.right_main {
+  height: 65%;
+  max-width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.right_main img {
+  object-fit: cover;
+  object-position: left;
+  height: 100%;
+  border-radius: 3px;
+  box-shadow: 0px 10px 15px black;
+}
+
+.circle {
+  position: fixed;
+  top: -21vw;
+  left: 50vw;
+  right: 0;
   margin: auto;
+  height: 70vw;
+  width: 70vw;
+  border: 40px solid #f9a620;
+  border-radius: 50%;
+  z-index: 0;
+  transition: all 0.75s ease-in-out;
 }
 
-.quote {
-  max-width: 75%;
-  margin: 7rem auto 5rem;
-  text-align: center;
-  font-size: 1.7rem;
-}
-.quote cite {
-  margin-top: 1rem;
-  float: right;
-}
-
-@media (max-width: 1100px) {
-  .about_img {
-    width: 100%;
-    height: 90vh;
-  }
-  .about_text {
-    font-size: 1.1rem;
-  }
-  .cols_container {
+@media (max-width: 768px) {
+  .main_container {
+    height: fit-content;
+    min-height: 80vh;
     flex-direction: column;
   }
-  .col {
-    width: 100%;
-  }
-  .col + .col {
-    border-left: none;
-  }
-}
 
-@media (max-width: 700px) {
-  .about_img {
-    height: 100vh;
-  }
-  .about_img img {
-    height: 100%;
+  .left_main {
+    padding: 1rem;
     width: 100%;
-    object-position: 28% center;
-    object-fit: cover;
-    margin-top: -3rem;
+    max-width: 100%;
   }
-  .about_text {
-    font-size: 1.1rem;
-    line-height: 1.5rem;
-    top: auto;
-    bottom: 0px;
-    right: 0;
+
+  .left_main h4 {
+    max-width: 100%;
+  }
+  .arrows {
     width: 100%;
-    height: fit-content;
-    padding: 1.5rem 1rem 0;
-    background: linear-gradient(to bottom, transparent 0%, rgba(255, 255, 255, 0.8) 25%);
   }
-  .col_body {
-    padding: 0 0.5rem;
+
+  .social_icons {
+    bottom: 0;
+    left: 4%;
+  }
+
+  .right_main {
+    display: none;
   }
 }
