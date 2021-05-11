@@ -20,10 +20,10 @@ const index = ({ homeImg }) => {
           <h1>
             Hi<span>.</span> I'm Christian
           </h1>
-          <h4>
+          <p>
             Whether I'm out roaming the streets of SF or camping in the desert with friends, I'm
             capturing the little moments to remember.
-          </h4>
+          </p>
           <div>
             <ButtonLink text="ABOUT ME" color="blue" route="/about" />
             <ButtonLink text="MY ALBUMS" color="orange" route="/albums" />
