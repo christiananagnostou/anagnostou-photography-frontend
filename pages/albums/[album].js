@@ -4,7 +4,6 @@ import Link from "next/link";
 import styles from "../../styles/AlbumSingle.module.css";
 import SocialIcons from "../../components/SocialIcons";
 import { LeftArrow, RightArrow } from "../../components/SVGs/Arrows";
-import MouseIcon from "../../components/SVGs/MouseIcon";
 import { API_URL } from "../../utils/urls";
 import Meta from "../../partials/seo-meta";
 import { fromImageToUrl } from "../../utils/urls";
@@ -36,7 +35,7 @@ const Album = ({ album }) => {
   useEffect(() => {
     let timeout;
     if (viewState === "single") {
-      timeout = setTimeout(() => shiftImageView("right"), 5000);
+      timeout = setTimeout(() => shiftImageView("right"), 10000);
     }
     return () => clearTimeout(timeout);
   }, [singleImageIndex]);
@@ -88,14 +87,9 @@ const Album = ({ album }) => {
                 image={image}
                 href={`/products/${slug}`}
                 imageStyles={styles.image_grid}
-              >
-                <h1>{name}</h1>
-              </InViewImage>
+              ></InViewImage>
             ))}
           </div>
-        </div>
-        <div className={styles.mouse_icon}>
-          <MouseIcon />
         </div>
       </>
     );
