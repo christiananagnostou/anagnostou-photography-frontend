@@ -59,7 +59,7 @@ const orders = () => {
             <tr className={styles.order} key={order.id}>
               <td>{new Date(order.created_at).toLocaleDateString("en-US")}</td>
               <Link href={`/products/${order.product.slug}`}>
-                <td class={styles.product_link}>
+                <td className={styles.product_link}>
                   <a>{order.product.name}</a>
                 </td>
               </Link>
