@@ -6,7 +6,7 @@ import ButtonLink from "../components/ButtonLink";
 import SocialIcons from "../components/SocialIcons";
 import Meta from "../partials/seo-meta";
 
-const index = ({ homeImg }) => {
+const index = () => {
   return (
     <>
       <Meta
