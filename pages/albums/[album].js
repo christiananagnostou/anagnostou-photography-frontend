@@ -38,16 +38,18 @@ const Album = ({ album }) => {
       timeout = setTimeout(() => shiftImageView("right"), 10000);
     }
     return () => clearTimeout(timeout);
-  }, [singleImageIndex]);
+  }, [singleImageIndex, viewState]);
 
   // Use arrows to navigate albums
   const rightKeyPress = useKeyPress("ArrowRight");
   const leftKeyPress = useKeyPress("ArrowLeft");
 
   useEffect(() => {
-    rightKeyPress && shiftImageView("right");
-    leftKeyPress && shiftImageView("left");
-  }, [rightKeyPress, leftKeyPress]);
+    if (viewState === "single") {
+      rightKeyPress && shiftImageView("right");
+      leftKeyPress && shiftImageView("left");
+    }
+  }, [rightKeyPress, leftKeyPress, viewState]);
 
   const singleImageDisplay = () => {
     const { name, meta_description, slug, image } = album.products[singleImageIndex];

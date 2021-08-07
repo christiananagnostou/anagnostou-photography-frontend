@@ -71,11 +71,15 @@
   animation: fadeIn 700ms ease-in-out 1s both;
 }
 
+.right_main > div {
+  border: 4px solid white;
+  box-shadow: 0 0 100px black;
+}
+
 .right_main div img {
   position: relative !important;
   height: 85.5vh !important;
   width: 57vh !important;
-  box-shadow: 0 0 100px black;
 }
 
 .circle {
