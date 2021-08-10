@@ -27,7 +27,10 @@ html {
 }
 body {
   height: 100%;
-  background: #29313d;
+  background: rgb(50, 58, 85);
+  background: linear-gradient(300deg, rgb(50, 58, 85) 0%, hsla(0, 0%, 0%, 1) 100%);
+  background: -moz-linear-gradient(300deg, rgb(50, 58, 85) 0%, hsla(0, 0%, 0%, 1) 100%);
+  background: -webkit-linear-gradient(300deg, rgb(50, 58, 85) 0%, hsla(0, 0%, 0%, 1) 100%);
   color: white;
   font-family: "Roboto", sans-serif;
 }

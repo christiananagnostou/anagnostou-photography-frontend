@@ -10,11 +10,11 @@
 }
 
 .orange {
-  color: #2a323d;
-  background: #f9a620;
-  border: 1px solid #2a323d;
+  color: #ffffff;
+  background: #5161aa;
+  /* border: 1px solid rgb(50, 58, 85); */
 }
 .blue {
   color: white;
-  background: #3a4555;
+  background: #516077;
 }

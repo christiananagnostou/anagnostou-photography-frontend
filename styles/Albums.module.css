@@ -91,7 +91,7 @@
 }
 
 .album_controller div:hover svg path {
-  fill: #f9a620;
+  fill: #424f8a;
 }
 
 /* .album_fan * {
@@ -176,7 +176,7 @@
   margin: auto;
   height: 100vw;
   width: 98vw;
-  border: 40px solid #f9a620;
+  border: 40px solid #424f8a;
   border-radius: 50%;
 }
 

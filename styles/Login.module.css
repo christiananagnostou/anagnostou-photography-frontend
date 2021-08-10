@@ -46,7 +46,7 @@
   color: white;
   font-size: 1rem;
   font-weight: 100;
-  background: #f9a620;
+  background: #424f8a;
   border: 1px solid #2a323d;
 }
 .button:hover {
@@ -61,7 +61,7 @@
   margin: auto;
   height: 160vw;
   width: 160vw;
-  border: 40px solid #f9a620;
+  border: 40px solid #424f8a;
   border-radius: 50%;
   z-index: -1;
   transition: all 0.75s ease-in-out;

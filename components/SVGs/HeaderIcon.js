@@ -21,7 +21,7 @@ const HeaderIcon = () => {
           width="20"
           height="4"
           transform="translate(229 92)"
-          fill="#f9a620"
+          fill="#424f8a"
         />
       </g>
     </svg>

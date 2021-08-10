@@ -97,7 +97,7 @@
   margin: auto;
   height: 70vw;
   width: 70vw;
-  border: 40px solid #f9a620;
+  border: 40px solid #424f8a;
   border-radius: 50%;
   z-index: -1;
   transition: all 0.75s ease-in-out;
@@ -126,7 +126,7 @@
     height: fit-content;
     width: 95%;
     max-width: unset;
-    
+
     display: flex;
     justify-content: center;
     align-items: center;
